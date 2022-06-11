@@ -17,6 +17,8 @@ over to the software only driver mode
 
 Save the file, then go under the BUILD menu to BUILD SOLUTION. Read the output window and make sure you got a "Build succeeded" message. At this point, you have the compiled code, but we need to flash that to the Pro Micro.
 
+If it fails to build with an error like "RUNCOMPILERTASK(0,0): error: can't create obj/" create an "obj" folder under the nested 3DVisionAVR folder.
+
 # Flashing
 
 You will need to manually set the COM port of the Pro Micro to flash it. Here's one way to get that. Plug in the Pro Micro. Open the Window's DEVICE MANAGER _(devmgmt.msc)_ and expand the PORTS section. You should see a COM port for the Pro Micro, however, we need the bootloader COM port. This is typically one number higher than the default one you'll see. So if it says "COM8", you can assume the bootloader we want is at "COM9". To test this, quickly double tap the RESET button on the Pro Micro (if your Pro Micro does not have a reset button, you [achieve the same thing](https://learn.sparkfun.com/tutorials/pro-micro--fio-v3-hookup-guide/troubleshooting-and-faq) by shorting the RESET Pin to GND twice quickly). This will enter the bootloader mode for 7 seconds and the correct com port will quickly be listed in device manager. If you double tap at the wrong speed, the device just resets instead of entering the bootloader mode, so it may take a few tries.
